@@ -1,3 +1,7 @@
 Mentors - Kunj Vadhiya & Vraj Soni
 
-Mentees :
+Mentees : 
+Kavya Rane , 
+Khwaish Shah ,
+Kanan Ruparelia , 
+Kumar Ayush
