@@ -9,7 +9,7 @@
     </div>
     
 <div style="text-align: center; font-size: 30px;margin: 20px 20px; font-family:'Times New Roman', Times, serif;">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</div>
-<div class="flex justify-center gap-12 text-2xl font-bold font-mono my-4 bg-white/40 p-4 max-w-2xl mx-auto rounded-xl shadow-sm">
+<div class="flex justify-center gap-12 text-2xl font-bold font-mono my-4 bg-white/40 p-4 mx-auto rounded-xl">
 
         <div id="rollcount"></div>
        </div>
@@ -51,7 +51,7 @@ const randomNumber = Math.floor(Math.random() * 6) + 1;
 dice.forEach(die => {
         rollDie(die);
         die.addEventListener('click', function() {
-            if (die.dataset.frozen === "true") {
+            if (die.dataset.frozen == "true") {
                 die.dataset.frozen = "false";
                 die.classList.remove('border-green-500', 'bg-green-100'); 
                 die.classList.add('border-transparent');
