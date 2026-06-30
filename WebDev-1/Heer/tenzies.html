@@ -64,7 +64,7 @@ dice.forEach(die => {
     });
 
     function checkWinCondition() {
-    const allFrozen = Array.from(dice).every(die => die.dataset.frozen === "true");
+    const allFrozen = Array.from(dice).every(die => die.dataset.frozen == "true");
     if (allFrozen) {
         rollButton.innerText = "YOU WIN!";
         rollButton.style.backgroundColor = "green";
@@ -77,9 +77,6 @@ dice.forEach(die => {
         dice.forEach(die => {
             rollDie(die);
              rolls++;
-
-       dice.forEach(die => {
-    die.dataset.frozen=="true";
     document.getElementById("rollcount").innerText="number of rolls taken:" + (((rolls-10)/10)+1);
     checkWinCondition();
 
