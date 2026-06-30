@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background-color:rgb(237, 244, 145)">
+    <div style="display: flex; justify-content: center; font-size:100px; font-weight: 750;">
+     TENZIES 
+    </div>
+    
+<div style="text-align: center; font-size: 30px;margin: 20px 20px; font-family:'Times New Roman', Times, serif;">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</div>
+<div class="flex justify-center gap-12 text-2xl font-bold font-mono my-4 bg-white/40 p-4 mx-auto rounded-xl">
+
+        <div id="rollcount"></div>
+       </div>
+     
+    
+<div class="flex justify-center mt-7 gap-7">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+
+</div>
+<div class="flex justify-center mt-7 gap-7">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+<img src="" class="die w-32 h-32 border-4 border-transparent cursor-pointer rounded-xl" data-frozen="false">
+</div>
+
+<div id="roll" style="display: flex;width: 200px ;height: 60px; background-color: cadetblue; border-radius: 15px; justify-content: center;align-items: center; margin-top: 30px;justify-self: center; border-color: black; border-width: 2px; cursor: pointer;" class="font-bold text-xl text-white">
+ROLL
+</div>
+
+
+
+
+<script>
+const dice = document.querySelectorAll('.die');
+const rollButton=document.querySelector('#roll');
+let rolls=0;
+function rollDie(die) {
+    if (die.dataset.frozen=="true") return;
+const randomNumber = Math.floor(Math.random() * 6) + 1;
+        die.src = randomNumber + ".png";
+       
+    }
+dice.forEach(die => {
+        rollDie(die);
+        die.addEventListener('click', function() {
+            if (die.dataset.frozen == "true") {
+                die.dataset.frozen = "false";
+                die.classList.remove('border-green-500', 'bg-green-100'); 
+                die.classList.add('border-transparent');
+            } else {
+                die.dataset.frozen = "true";
+                die.classList.remove('border-transparent');
+                die.classList.add('border-green-500', 'bg-green-100'); 
+            }
+        });
+    });
+
+    function checkWinCondition() {
+    const allFrozen = Array.from(dice).every(die => die.dataset.frozen == "true");
+    if (allFrozen) {
+        rollButton.innerText = "YOU WIN!";
+        rollButton.style.backgroundColor = "green";
+        rollButton.style.pointerEvents = "none"; 
+        document.body.style.backgroundColor="orange";
+    }
+}
+
+    rollButton.addEventListener('click', function() {
+        dice.forEach(die => {
+            rollDie(die);
+             rolls++;
+    document.getElementById("rollcount").innerText="number of rolls taken:" + (((rolls-10)/10)+1);
+    checkWinCondition();
+
+});
+ 
+            
+        });
+    });
+
+</script>
+</body>
+</html>
+
+
