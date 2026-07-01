@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+    
+    
+<head>
+    <style>
+        .container{
+            display: flex;            
+            flex-direction: column;        /* Direction */
+            flex-wrap: wrap;            /* Wrap */
+            justify-content: center;
+            
+            
+        }
+        
+        .box1{
+             background-color: rgb(229, 210, 42);
+            width: 500px;
+            height: 800px;
+            font-size: 100px;
+            text-align: center;
+            line-height: 100px;
+            flex-basis: 150px;
+            border-radius: 10px;
+            position: absolute;
+            top: 15px;
+            left: 400px;
+
+         }
+        .box2{
+             background-color:rgb(35, 178, 35);
+            width: 450px;
+            height: 750px;
+            text-align: left;
+        
+            flex-basis: 150px;
+            position: absolute;
+            top: 35px;
+            left: 425px;
+            
+             }
+        
+        
+        @media (max-width: 600px){
+
+            .container{
+                flex-direction: column;
+            }
+
+            .box{
+                flex-basis: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>diva's pokemon</h2>
+
+    <div class="container">
+
+        <div class="box box1"></div>
+        <div class="box box2">
+            <span style="font-weight: bold; margin-right: 40px; margin-left: 10px;">Evolves from Ivysaur</span>
+            <span>Put Venusaur on stage 1 card</span>
+            <hr style="color: yellow;">
+             <span style="font-weight: bold; margin-right: 180px; margin-left: 10px; font-size: xx-large;">Venusaur</span>
+             <span style="font-weight: bold; font-size: xx-large; color: red;">100HP</span>
+             <img src="https://cdn.shopify.com/s/files/1/0896/7038/5929/files/cPK_10_000030_00_FUSHIGIBANA_R_L_ILL.webp?v=1749365136" ; alt="kenusaur"; width="400px"; style="margin-left: 25px; filter: drop-shadow(5px 5px 10px);">
+
+            <div style="height: 25px;width: 400px; background-color:rgb(231, 212, 37); margin-left: 27px;margin-top: 10px;">
+               <i><b><span style="margin-left: 30px;">Seed Pokemon. Length: 6'7'' , Weight: 221 lbs</span></span> </b></i>
+            </div> 
+            <p style="margin-left: 10px; margin-top: 5px;"><span style="color:red; font-weight: 650; font-size: x-large;">Pokemon Power: Energy Trans</span><span style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><i> As often as you like during your turn(before your attack),you may take 1 🌿 Energy card attached to 1 of your Pokemon and attach it to a different one.This power can't be used if the  Venusaur is Asleep, Confused, or Paralysed.</i></span> </p>
+            <hr style="margin: 5px;">
+            <div style="display:flex ;gap: 8px;margin-left: 10px;margin-top: 10px;">
+            <img src="leaf.png"; alt="leaf symbol"; width="40px;height:40px;">
+            <img src="leaf.png"; alt="leaf symbol"; width="40px;height:40px;">
+            <p style="margin-left: 100px;margin-top: 15px;font-size: 20px;"><span style="font-weight: bold;">Solarbeam</span><span style="font-weight: bold;margin-left: 100px;"> 60</span></p>
+             </div>
+             <div style="display:flex ;gap: 8px;margin-left: 10px;margin-top: 10px;">
+            <img src="leaf.png"; alt="leaf symbol"; width="40px;">
+            <img src="leaf.png"; alt="leaf symbol"; width="40px;">
+             </div>
+             <hr style="margin: 5px;"> 
+
+          <div style="display:flex ;gap: 8px;margin-left: 10px;">
+<p style="margin-left: 3px;font-size: 15px;"><span style="font-weight: bold;"> Weakness</span><span style="font-weight: bold;margin-left: 100px;">Resistance</span><span style="font-weight: bold;margin-left: 100px;">Retreat Cost</span></p>
+          </div>
+
+          <div style="display:flex ;gap: 8px;margin-left: 10px;margin-top: 10px;">
+            <img src="red.png"; alt="red symbol"; width="40px";>
+            <img src="star.png"; alt="white symbol"; width="40px"; style="margin-left: 300px;">
+             <img src="star.png"; alt="white symbol"; width="40px";>
+             </div>
+             <div style="height: 50px;width: 410px; border-color:rgb(231, 212, 37);border-width: 3px; margin-left:23px;margin-top: 10px;">
+               <i><b><span style="margin-left: 10px">This plant blooms when it is absorbing solar energy.</span><span style="margin-left: 10px;"> stays on the move to seek sunlight.</span><span style="margin-left: 70px;">LV.67 #3</span> </b></i> 
+            </div>
+       <span style="font-size:x-small;">illus. Mitsuhiro Arita</span>
+       <span style="font-size: x-small;margin-left: 50px;"> 1995,96,98 Nintendo,Creatures,GAMEFREAK</span>
+       <span style="font-size: x-small;margin-left: 60px;">15/102⭐</span>
+       
+    </div>
+
+
+    </div>
+
+</body>
+</html>
