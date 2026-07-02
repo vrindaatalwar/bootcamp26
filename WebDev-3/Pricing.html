@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        .price{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            gap: 60px 40px;
+        }
+            .card{
+                text-align: center;
+            }
+            .card p{
+                color: #424242;;
+                font-size: 20px;
+                font-family: Inter;
+                font-style: normal;
+
+            }
+    
+    </style>
+    </head>
+    <body>
+         <body style="max-width: 100%; padding-left: 100px;padding-right: 100px;">
+        
+         <div>
+        
+       <nav style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: fixed;
+    background-color:rgb(255, 255, 255);
+    gap: 500px;
+    border-bottom: solid #e0e0e0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+">
+            <div style="display: flex;justify-content:left;"><img src="/logo.svg" width="250"></div>
+            <div style="display:flex;justify-content:flex-end;gap:40px">
+                <a href="Signup.html">Signup</a>
+                <a href="About.html;">About</a>
+                <a href="Products.html">Products</a>
+                <a href="Pricing.html">Pricing</a>
+                <a href="#">Support</a>
+            </div>
+            </nav>
+            <br><br><br><br><br><br><br><br>
+            <div>
+                <h3 style="text-align: center;font-size: 30px;line-height: 2px;">Charges</h3>
+                <p style="text-align: center;color: darkgray;font-size: 20px;">List of all charges and taxes</p>
+            </div>
+            <div class="price">
+                <div class="card">
+                    <img src="/pricing-eq (1).svg">
+                    <h3>Free equity delivery</h3>
+                    <p>All equity delivery investments (NSE, BSE), are absolutely free — ₹ 0 brokerage.</p>
+                </div>
+                <div class="card">
+                    <img src="/other-trades.svg">
+                    <h3>Intraday and F&O trades</h3>
+                    <p>Flat ₹ 20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity trades. Flat ₹20 on all option trades.</p>
+
+                </div>
+                <div class="card">
+                    <img src="/pricing-eq (1).svg">
+                    <h3>Free direct MF</h3>
+                    <p>All direct mutual fund investments are absolutely free — ₹ 0 commissions & DP charges.</p>
+                </div>
+            </div>
+    </body>
+</html>
