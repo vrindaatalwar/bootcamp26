@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.column {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Quicksand',sans-serif;
+    background:#f8f4ec;
+    color:#5b4636;
+}
+
+.app{
+    width:90%;
+    margin:auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    margin-bottom:35px;
+    color:#8b6f5c;
+}
+
+.add-task{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:35px;
+}
+
+.add-task input{
+    width:320px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    background:white;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+    font-size:16px;
+}
+
+.add-task button{
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    background:#b08968;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.add-task button:hover{
+    background:#8c6a52;
+}
+
+.board{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.column{
+    background:#fffdf8;
+    width:300px;
+    min-height:420px;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.column h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#6d4c41;
+}
+
+.task-card{
+    background:#efe6d8;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.task-card:hover{
+    transform:translateY(-3px);
+}
+
+.task-card p{
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+}
+
+.buttons button{
+    border:none;
+    padding:7px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    background:#d8c3a5;
+    transition:.3s;
+}
+
+.buttons button:hover{
+    background:#c4a484;
+}
+
+@media(max-width:900px){
+
+.board{
+    flex-direction:column;
+    align-items:center;
+}
+
+.column{
+    width:90%;
+}
+
+.add-task{
+    flex-direction:column;
+    align-items:center;
+}
+
+.add-task input{
+    width:90%;
+}
+
+}
