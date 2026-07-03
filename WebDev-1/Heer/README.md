@@ -1,16 +1,42 @@
-# React + Vite
+# 🚀 Web Development Workspace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my repository! This folder contains my core React application alongside individual front-end practice projects. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Repository Structure & Projects
 
-## React Compiler
+This repository is organized into two main parts: a core React application and a dedicated directory for individual vanilla frontend assignments.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. ⚛️ Core React Application
+* **`src/` & `public/`**: Contains the source code, components, and assets for the primary React application.
+* **Build Configuration**: Configured with Vite for fast local development and modern bundling.
 
-## Expanding the ESLint configuration
+### 2. 📂 Html css js projects/
+A standalone workspace containing three individual, mini frontend projects built with pure HTML5, CSS3, and JavaScript:
+* 🃏 **Pokemon Card Display** (`heer pokemon card.html`) – A custom, visually stylized layout for displaying Pokémon cards.
+* 💼 **Personal Portfolio** (`portfolio heer.html`) – A personal responsive webpage highlighting projects, skills, and background.
+* 🎲 **Tenzies Game** (`tenzies.html`) – An interactive dice-rolling game featuring state tracking and dynamic gameplay logic.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack & Tools
+
+* **Framework:** React
+* **Build Tooling:** Vite, ESLint
+* **Core Languages:** HTML5, CSS3, JavaScript (ES6+)
+* **Development Environment:** VS Code
+
+---
+
+## 🏃‍♂️ How to Explore & Run the Projects
+
+### Running the Standalone HTML/CSS/JS Projects
+1. Navigate into the `Html css js projects` folder.
+2. Open any of the individual `.html` files (e.g., `tenzies.html`) directly in your browser, or use the VS Code **Live Server** extension for real-time local previews.
+
+### Running the React Application
+1. Clone this repository to your local machine.
+2. Open your terminal in the root directory and install the necessary dependencies:
+   ```bash
+   npm install
