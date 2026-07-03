@@ -1,0 +1,25 @@
+body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#234f1e;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,100px);
+    gap:10px;
+}
+.box{
+    width:100px;
+    height:100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    font-size:40px;
+    cursor:pointer;
+     background:#de7d7dcb;
+border:2px solid #5c4033;
+    border-radius:10px;
+}
