@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center">
+
+    <form action="" method="post" class="bg-white place-content-center pl-10 m-10 pr-10 rounded-2xl ">
+        <h1 class="text-slate-700 text-3xl grid font-bold place-content-center mt-2">Student's Registaration</h1>
+        <p class="grid font-semibold place-content-center text-sm mt-2">Please fill in your details to create an account.</p>
+        <hr>
+        <div class="text-lg">
+                <div class="p-0.2 mt-4">
+            <b>First Name :</b>
+            <input type="text" name="firstname" class="border ml-3.5" id="username" placeholder="Dean Ambrose">
+            <br><br>
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Email :</b>
+            <input type="email" name="email" class="border ml-13.5" id="mail" placeholder="deanam@gmail.com">
+            <br><br>
+        </div>
+        
+        <div class="p-0.2 m-1">
+            <b>D.O.B :</b>
+            <input type="date" name="dob" class="border ml-13" id="dob">
+            <br><br>
+                    
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Mob No :</b>
+            <input type="number" name="contact" class="border ml-7" placeholder="91 + 8684XXXXXX" id="num">
+            <br><br>
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Password :</b>
+            <input type="password" name="email" class="border ml-4" placeholder="abcde@123" id="mail" >
+            <i class="fa-solid fa-eye"></i>
+            <br><br>
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Gender :</b>
+            <input type="radio" name="gender" class="border" id="male" value="male">Male
+            <input type="radio" name="gender" class="border" id="female" value="female">Female
+            <input type="radio" name="gender" class="border" id="Other" value="Other">Other
+            <br><br>
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Department :</b>
+            <select name="" id="" class="border">
+                <option value="CSE" >CSE</option>
+                        <option value="CSE-DS">CSE-DS</option>
+                        <option value="AIML">AIML</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Information Tech">Information Tech</option>
+                        <option value="AIDS">AIDS</option>
+            </select>
+            <br><br>
+        </div>
+        <div class="p-0.2 m-1">
+            <b>Semester :</b>
+                <select name="" id="" class="border">
+                    <option value="">I</option>
+                    <option value="">II</option>
+                    <option value="">III</option>
+                    <option value="">IV</option>
+                    <option value="">V</option>
+                    <option value="">VI</option>
+                    <option value="">VII</option>
+                    <option value="">VII</option>
+                    
+                </select>
+            <br><br>
+        </div>
+        <div class="grid place-content-center">
+            <button class="bg-blue-500 hover:bg-blue-800 hover:text-white px-14 py-1 mb-3 rounded-tl-xl rounded-br-xl">
+                
+                Submit
+            </button>
+            
+        </div>
+        
+
+        </div>
+        
+
+    </form>
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 font-sans text-gray-800">
+
+    <form action="" method="post" class="bg-white w-full max-w-lg p-8 rounded-2xl shadow-xl border border-gray-200">
+        
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Student Registration</h1>
+            <p class="text-gray-500 text-sm mt-2">Please fill in your details to create an account.</p>
+        </div>
+
+        <div class="space-y-5">
+            
+            <div>
+                <label for="firstname" class="block text-sm font-semibold mb-1 text-gray-700">First Name</label>
+                <input type="text" name="firstname" id="firstname" placeholder="John Doe" 
+                       class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label for="email" class="block text-sm font-semibold mb-1 text-gray-700">Email</label>
+                    <input type="email" name="email" id="email" placeholder="john@example.com"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                </div>
+                <div>
+                    <label for="contact" class="block text-sm font-semibold mb-1 text-gray-700">Mobile No</label>
+                    <input type="tel" name="contact" id="contact" placeholder="1234567890"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label for="dob" class="block text-sm font-semibold mb-1 text-gray-700">D.O.B</label>
+                    <input type="date" name="dob" id="dob"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-gray-600">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-semibold mb-1 text-gray-700">Password</label>
+                    <input type="password" name="password" id="password" placeholder="••••••••"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700">Gender</label>
+                <div class="flex items-center space-x-6">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="gender" id="male" value="male" class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 cursor-pointer">
+                        <span class="text-sm">Male</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="gender" id="female" value="female" class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 cursor-pointer">
+                        <span class="text-sm">Female</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="gender" id="other" value="Other" class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 cursor-pointer">
+                        <span class="text-sm">Other</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label for="department" class="block text-sm font-semibold mb-1 text-gray-700">Department</label>
+                    <select name="department" id="department" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white">
+                        <option value="" disabled selected>Select Dept</option>
+                        <option value="CSE">CSE</option>
+                        <option value="CSE-DS">CSE-DS</option>
+                        <option value="AIML">AIML</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Information Tech">Information Tech</option>
+                        <option value="AIDS">AIDS</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="semester" class="block text-sm font-semibold mb-1 text-gray-700">Semester</label>
+                    <select name="semester" id="semester" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white">
+                        <option value="" disabled selected>Select Sem</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                        <option value="V">V</option>
+                        <option value="VI">VI</option>
+                        <option value="VII">VII</option>
+                        <option value="VIII">VIII</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform duration-200 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    Register Now
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+</html> -->
