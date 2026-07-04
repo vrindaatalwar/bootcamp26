@@ -1,0 +1,29 @@
+.outer-section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.inner-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 1200px;
+}
+.text-column{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+.image-column{
+    width: 50%;
+    display: flex;
+    
+    justify-content: center;
+    
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh - Kanban Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom scrollbar for task lists */
+        .task-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .task-list::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        .task-list::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 8px;
+        }
+        .task-list::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Ghost styling for dragging */
+        .is-dragging {
+            opacity: 0.5;
+            transform: scale(1.02) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            cursor: grabbing;
+        }
+
+        /* Highlight column when hovering with a dragged card */
+        .drag-over {
+            background-color: #e2e8f0 ;
+            border: 2px dashed #818cf8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 h-screen flex flex-col overflow-hidden text-gray-800 antialiased">
+
+    <header class="bg-white/10 backdrop-blur-md border-b border-white/20 text-white p-4 flex justify-between items-center shadow-sm shrink-0">
+        <div class="flex items-center gap-4">
+            <h1 class="text-2xl font-bold tracking-tight drop-shadow-md">✨ Project Canvas</h1>
+            <div class="hidden md:block h-6 w-px bg-white/30"></div>
+            <span class="hidden md:inline-block text-sm font-medium bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
+                My Workspace
+            </span>
+        </div>
+        <button id="clear-board-btn" class="text-sm bg-red-500/80 hover:bg-red-600 text-white font-medium px-4 py-2 rounded-lg transition-all shadow-sm">
+            Clear Board
+        </button>
+    </header>
+
+    <div class="flex-1 overflow-x-auto overflow-y-hidden p-6">
+        <div class="flex flex-row gap-6 items-start h-full pb-4">
+            
+            <!-- COLUMN 1: TO DO -->
+            <div class="kanban-column bg-gray-50/95 backdrop-blur-sm shadow-xl border border-white/40 w-80 rounded-2xl flex flex-col shrink-0 max-h-full transition-colors duration-200" data-status="todo">
+                <div class="p-4 pb-2 font-bold text-gray-700 flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400 shadow-sm"></div>
+                        To Do
+                    </div>
+                    <span id="todoCount" class="bg-white shadow-sm text-gray-600 text-xs py-1 px-2.5 rounded-full font-semibold">0</span>
+                </div>
+                
+                <!-- Task List -->
+                <div class="task-list flex-1 overflow-y-auto px-3 space-y-3 min-h-[50px] mt-2 pb-2"></div>
+                
+                <!-- Add Card UI -->
+                <div class="p-3 shrink-0">
+                    <button class="add-card-btn w-full text-left text-gray-500 font-medium hover:bg-gray-200 hover:text-gray-800 p-2.5 rounded-xl transition-all flex items-center gap-2">
+                        <span class="text-xl leading-none">+</span> Add a card
+                    </button>
+                    <div class="add-card-form hidden flex-col gap-3">
+                        <textarea class="w-full p-3 text-sm rounded-xl shadow-sm border border-gray-200 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" rows="2" placeholder="Enter a title for this card..."></textarea>
+                        <div class="flex items-center gap-2">
+                            <button class="save-card-btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium shadow-sm transition-all active:scale-95">Add</button>
+                            <button class="cancel-card-btn text-gray-400 hover:text-gray-700 p-2 rounded-lg text-xl leading-none transition-colors">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: IN PROGRESS -->
+            <div class="kanban-column bg-gray-50/95 backdrop-blur-sm shadow-xl border border-white/40 w-80 rounded-2xl flex flex-col shrink-0 max-h-full transition-colors duration-200" data-status="inprogress">
+                <div class="p-4 pb-2 font-bold text-gray-700 flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-sm"></div>
+                        In Progress
+                    </div>
+                    <span id="inprogressCount" class="bg-white shadow-sm text-gray-600 text-xs py-1 px-2.5 rounded-full font-semibold">0</span>
+                </div>
+                <div class="task-list flex-1 overflow-y-auto px-3 space-y-3 min-h-[50px] mt-2 pb-2"></div>
+                
+                <div class="p-3 shrink-0">
+                    <button class="add-card-btn w-full text-left text-gray-500 font-medium hover:bg-gray-200 hover:text-gray-800 p-2.5 rounded-xl transition-all flex items-center gap-2">
+                        <span class="text-xl leading-none">+</span> Add a card
+                    </button>
+                    <div class="add-card-form hidden flex-col gap-3">
+                        <textarea class="w-full p-3 text-sm rounded-xl shadow-sm border border-gray-200 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" rows="2" placeholder="Enter a title for this card..."></textarea>
+                        <div class="flex items-center gap-2">
+                            <button class="save-card-btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium shadow-sm transition-all active:scale-95">Add</button>
+                            <button class="cancel-card-btn text-gray-400 hover:text-gray-700 p-2 rounded-lg text-xl leading-none transition-colors">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: DONE -->
+            <div class="kanban-column bg-gray-50/95 backdrop-blur-sm shadow-xl border border-white/40 w-80 rounded-2xl flex flex-col shrink-0 max-h-full transition-colors duration-200" data-status="done">
+                <div class="p-4 pb-2 font-bold text-gray-700 flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-green-400 shadow-sm"></div>
+                        Done
+                    </div>
+                    <span id="doneCount" class="bg-white shadow-sm text-gray-600 text-xs py-1 px-2.5 rounded-full font-semibold">0</span>
+                </div>
+                <div class="task-list flex-1 overflow-y-auto px-3 space-y-3 min-h-[50px] mt-2 pb-2"></div>
+                
+                <div class="p-3 shrink-0">
+                    <button class="add-card-btn w-full text-left text-gray-500 font-medium hover:bg-gray-200 hover:text-gray-800 p-2.5 rounded-xl transition-all flex items-center gap-2">
+                        <span class="text-xl leading-none">+</span> Add a card
+                    </button>
+                    <div class="add-card-form hidden flex-col gap-3">
+                        <textarea class="w-full p-3 text-sm rounded-xl shadow-sm border border-gray-200 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" rows="2" placeholder="Enter a title for this card..."></textarea>
+                        <div class="flex items-center gap-2">
+                            <button class="save-card-btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium shadow-sm transition-all active:scale-95">Add</button>
+                            <button class="cancel-card-btn text-gray-400 hover:text-gray-700 p-2 rounded-lg text-xl leading-none transition-colors">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+     <div id="clear-modal" class="hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex justify-center items-center p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 transform transition-transform scale-95 origin-center">
+            <div class="flex items-center gap-3 text-red-600 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 bg-red-100 p-1.5 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h3 class="text-lg font-bold text-gray-900">Clear entire board?</h3>
+            </div>
+            <p class="text-sm text-gray-600 mb-6">Are you sure you want to delete all tasks? This action cannot be undone.</p>
+            <div class="flex justify-end gap-3">
+                <button id="cancel-clear-btn" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">Cancel</button>
+                <button id="confirm-clear-btn" class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-sm">Yes, clear it</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
