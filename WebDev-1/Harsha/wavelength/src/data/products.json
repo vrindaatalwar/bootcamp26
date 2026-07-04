@@ -1,0 +1,146 @@
+[
+  {
+    "id": "wv-001",
+    "name": "Midnight Static",
+    "artist": "The Amber Room",
+    "category": "Vinyl",
+    "price": 28.0,
+    "description": "Debut LP pressed on 180g smoke-black vinyl. Slow-burning shoegaze with a warm analog low end.",
+    "image": "https://picsum.photos/seed/wv-001/600/600"
+  },
+  {
+    "id": "wv-002",
+    "name": "Coastline Sessions",
+    "artist": "Ravi & The Tides",
+    "category": "Vinyl",
+    "price": 24.5,
+    "description": "Live-to-tape jazz fusion recorded on a pier in Goa. Includes a 12-page liner note booklet.",
+    "image": "https://picsum.photos/seed/wv-002/600/600"
+  },
+  {
+    "id": "wv-003",
+    "name": "Concrete Bloom",
+    "artist": "Nairobi Static Unit",
+    "category": "Vinyl",
+    "price": 31.0,
+    "description": "Afrobeat-forward instrumental record. Double LP, gatefold sleeve with screen-printed artwork.",
+    "image": "https://picsum.photos/seed/wv-003/600/600"
+  },
+  {
+    "id": "wv-004",
+    "name": "Paper Moon EP",
+    "artist": "Junko Ito",
+    "category": "Vinyl",
+    "price": 19.0,
+    "description": "Four-track ambient EP on translucent amber vinyl. Limited pressing of 500.",
+    "image": "https://picsum.photos/seed/wv-004/600/600"
+  },
+  {
+    "id": "wv-005",
+    "name": "The Orbit MK1",
+    "artist": null,
+    "category": "Turntables",
+    "price": 349.0,
+    "description": "Belt-drive turntable with a solid walnut plinth and built-in phono preamp. Auto-stop tonearm.",
+    "image": "https://picsum.photos/seed/wv-005/600/600"
+  },
+  {
+    "id": "wv-006",
+    "name": "Lowdown DJ Deck",
+    "artist": null,
+    "category": "Turntables",
+    "price": 519.0,
+    "description": "Direct-drive turntable built for scratching and beat-matching. Adjustable pitch fader, high torque motor.",
+    "image": "https://picsum.photos/seed/wv-006/600/600"
+  },
+  {
+    "id": "wv-007",
+    "name": "Field Recorder Portable",
+    "artist": null,
+    "category": "Turntables",
+    "price": 289.0,
+    "description": "Battery-powered suitcase turntable for record store days and backyard sessions. Built-in stereo speakers.",
+    "image": "https://picsum.photos/seed/wv-007/600/600"
+  },
+  {
+    "id": "wv-008",
+    "name": "Studio Wrap Headphones",
+    "artist": null,
+    "category": "Headphones",
+    "price": 129.0,
+    "description": "Closed-back over-ear headphones tuned for warm mids. Memory-foam cups, detachable coiled cable.",
+    "image": "https://picsum.photos/seed/wv-008/600/600"
+  },
+  {
+    "id": "wv-009",
+    "name": "Open Air Monitors",
+    "artist": null,
+    "category": "Headphones",
+    "price": 189.0,
+    "description": "Open-back reference headphones for critical listening. Wide soundstage, breathable earpads.",
+    "image": "https://picsum.photos/seed/wv-009/600/600"
+  },
+  {
+    "id": "wv-010",
+    "name": "Commuter Buds",
+    "artist": null,
+    "category": "Headphones",
+    "price": 79.0,
+    "description": "Compact wired earbuds with a warm, vinyl-like tonal balance. Comes in a felt-lined tin.",
+    "image": "https://picsum.photos/seed/wv-010/600/600"
+  },
+  {
+    "id": "wv-011",
+    "name": "Diamond Tip Cartridge",
+    "artist": null,
+    "category": "Accessories",
+    "price": 45.0,
+    "description": "Elliptical diamond stylus replacement cartridge. Fits most standard headshells.",
+    "image": "https://picsum.photos/seed/wv-011/600/600"
+  },
+  {
+    "id": "wv-012",
+    "name": "Anti-Static Sleeve Pack",
+    "artist": null,
+    "category": "Accessories",
+    "price": 14.0,
+    "description": "Set of 25 rice-paper inner sleeves. Keeps static and dust off your pressings.",
+    "image": "https://picsum.photos/seed/wv-012/600/600"
+  },
+  {
+    "id": "wv-013",
+    "name": "Felt Turntable Mat",
+    "artist": null,
+    "category": "Accessories",
+    "price": 18.0,
+    "description": "Forest-green wool felt mat. Reduces static and platter resonance.",
+    "image": "https://picsum.photos/seed/wv-013/600/600"
+  },
+  {
+    "id": "wv-014",
+    "name": "Record Cleaning Kit",
+    "artist": null,
+    "category": "Accessories",
+    "price": 32.0,
+    "description": "Carbon-fiber brush, cleaning fluid, and microfiber cloth. Everything for a pre-spin ritual.",
+    "image": "https://picsum.photos/seed/wv-014/600/600"
+  },
+  {
+    "id": "wv-015",
+    "name": "Harborlight",
+    "artist": "Two Slow Rivers",
+    "category": "Vinyl",
+    "price": 26.0,
+    "description": "Sophomore folk record, recorded live in a lighthouse. Pressed on translucent blue vinyl.",
+    "image": "https://picsum.photos/seed/wv-015/600/600"
+  },
+  {
+    "id": "wv-016",
+    "name": "Desk Amp Companion",
+    "artist": null,
+    "category": "Headphones",
+    "price": 99.0,
+    "description": "Compact headphone amplifier with warm tube-style coloration. Pairs with any wired headphone set.",
+    "image": "https://picsum.photos/seed/wv-016/600/600"
+  }
+]
