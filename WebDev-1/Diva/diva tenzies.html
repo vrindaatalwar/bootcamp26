@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .starttext
+    {
+    text-align: center;
+    font-size : 30px;
+    margin: 0px 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:white; 
+    }
+</style>
+</head>
+<body style="background-color:firebrick">
+    <div class=" flex justify-center text-7xl mt-1 font-bold font-serif text-white">
+     TENZIES 
+    </div>
+    <div class="starttext"></div>
+    <div class="starttext"> 1.Click on Roll to Start.</div>
+    <div class="starttext">2.Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</div>
+    <div class="starttext">3.Click on Roll once all the dice are Selected.</div>
+
+<div class="flex justify-center mt-7 gap-7">
+<img src="" id="d1" class="w-40 h-40">
+<img src="" id="d2" class="w-40 h-40">
+<img src="" id="d3"class="w-40 h-40">
+<img src=""id="d4" class="w-40 h-40">
+<img src="" id="d5" class="w-40 h-40">
+
+</div>
+<div class="flex justify-center mt-7 gap-7">
+<img src="" id="d6" class="w-40 h-40">
+<img src="" id="d7" class="w-40 h-40">
+<img src="" id="d8" class="w-40 h-40">
+<img src="" id="d9" class="w-40 h-40">
+<img src="" id="d10" class="w-40 h-40">
+</div>
+
+<div id="roll" style="display: flex;width: 200px ;height: 60px; background-color:gold; border-radius: 15px; justify-content: center;align-items: center; margin-top: 30px;justify-self: center; border-color: white; border-width: 2px;">
+ROLL
+</div>
+<p id="finaltext" style="text-align: center; font-size: 30px;margin: 5px 20px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman'; color:white;"></p>
+
+
+<script>
+let value1=true;
+let value2=true;
+let value3=true;
+let value4=true;
+let value5=true;
+let value6=true;
+let value7=true;
+let value8=true;
+let value9=true;
+let value10=true;
+
+let count=0;
+
+function shuffle()
+ {
+    count++;
+    if (value1==true)  //use "==" to check conditions!!!!
+    {
+var randomNumber1=Math.floor(Math.random()*6) + 1;
+var DiceImage1 =  randomNumber1 + ".jpg"
+var ImageSource1 = DiceImage1;   //For when image and file is not in same folder,then do this to give file location.here direct DiceImage1 in Image1.setAttribute works
+var Image1 = document.querySelectorAll("img")[0];
+Image1.setAttribute("src",ImageSource1)
+    }
+
+if(value2==true)   
+{
+var randomNumber2=Math.floor(Math.random()*6) + 1;
+var DiceImage2 =  randomNumber2 + ".jpg"
+var Image2 = document.querySelectorAll("img")[1];
+Image2.setAttribute("src",DiceImage2)
+}
+
+if(value3==true)
+{
+var randomNumber3=Math.floor(Math.random()*6) + 1;
+var DiceImage3 =  randomNumber3 + ".jpg"
+var Image3 = document.querySelectorAll("img")[2];
+Image3.setAttribute("src",DiceImage2)
+}
+
+if(value4==true)
+{
+var randomNumber4=Math.floor(Math.random()*6) + 1;
+var DiceImage4 =  randomNumber4 + ".jpg"
+var Image4 = document.querySelectorAll("img")[3];
+Image4.setAttribute("src",DiceImage4)
+}
+
+if(value5==true)
+{
+var randomNumber5=Math.floor(Math.random()*6) + 1;
+var DiceImage5 =  randomNumber5 + ".jpg"
+var Image5 = document.querySelectorAll("img")[4];
+Image5.setAttribute("src",DiceImage5)
+}
+
+if(value6==true)
+{
+var randomNumber6=Math.floor(Math.random()*6) + 1;
+var DiceImage6 =  randomNumber6 + ".jpg"
+var Image6 = document.querySelectorAll("img")[5];
+Image6.setAttribute("src",DiceImage6)
+}
+
+if(value7==true)
+{
+var randomNumber7=Math.floor(Math.random()*6) + 1;
+var DiceImage7 =  randomNumber7 + ".jpg"
+var Image7 = document.querySelectorAll("img")[6];
+Image7.setAttribute("src",DiceImage7)
+}
+
+if(value8==true)
+{
+var randomNumber8=Math.floor(Math.random()*6) + 1;
+var DiceImage8 =  randomNumber8 + ".jpg"
+var Image8 = document.querySelectorAll("img")[7];
+Image8.setAttribute("src",DiceImage8)
+}
+
+if(value9==true)
+{
+var randomNumber9=Math.floor(Math.random()*6) + 1;
+var DiceImage9 =  randomNumber9 + ".jpg"
+var Image9 = document.querySelectorAll("img")[8];
+Image9.setAttribute("src",DiceImage9)
+}
+
+if(value10==true)
+{
+var randomNumber10=Math.floor(Math.random()*6) + 1;
+var DiceImage10 =  randomNumber10 + ".jpg"
+var Image10 = document.querySelectorAll("img")[9];
+Image10.setAttribute("src",DiceImage10)
+}
+
+if (value1==false && value2==false && value3==false && value4==false && value5==false && value6==false && value7==false && value8==false && value9==false && value10==false)
+{
+    
+    document.getElementById("finaltext").innerText="YOU WON! Number of Rolls Taken:" + (count-2);
+}
+
+}
+
+function fix1()
+{ value1=false
+  d1.style.border="4px  solid gold"
+ }
+
+function fix2()
+{ value2=false 
+     d2.style.border="4px  solid gold"
+}
+
+function fix3()
+{ value3=false
+     d3.style.border="4px  solid gold "
+ }
+
+function fix4()
+{ value4=false 
+     d4.style.border="4px  solid gold"
+}
+
+function fix5()
+{ value5=false
+     d5.style.border="4px  solid gold "
+ }
+
+function fix6()
+{ value6=false
+     d6.style.border="4px  solid gold "
+ }
+
+function fix7()
+{ value7=false
+     d7.style.border="4px  solid gold"
+ }
+
+function fix8()
+{ value8=false
+     d8.style.border="4px  solid gold  "
+ }
+
+function fix9()
+{ value9=false
+     d9.style.border="4px  solid gold  "
+ }
+
+function fix10()
+{ value10=false
+     d10.style.border="4px  solid gold "
+ }
+
+d1.addEventListener('click', fix1);
+d2.addEventListener('click', fix2);
+d3.addEventListener('click', fix3);
+d4.addEventListener('click', fix4);
+d5.addEventListener('click', fix5);
+d6.addEventListener('click', fix6);
+d7.addEventListener('click', fix7);
+d8.addEventListener('click', fix8);
+d9.addEventListener('click', fix9);
+d10.addEventListener('click', fix10);
+
+roll.addEventListener('click',shuffle);
+
+
+
+</script>
+</body>
+</html>
+
+
+>
