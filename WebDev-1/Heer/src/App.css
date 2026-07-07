@@ -1,0 +1,135 @@
+/* Global Reset & Body Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Header Banner */
+.header {
+  background-color: #581c1c;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Main Container */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Cards (Form & Task Items) */
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1f2937;
+}
+
+.btn-secondary {
+  background-color: #4c1d95;
+  color: #ffffff;
+  margin: 1.5rem 0;
+}
+
+.btn-secondary:hover {
+  background-color: #5b21b6;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Task Grid */
+.task-list-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* Task Individual Item */
+.task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-status {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
