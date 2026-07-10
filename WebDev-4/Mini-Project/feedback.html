@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Feedback</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    width: 360px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  #bmiSummary {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  #tips {
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    background-color: #f7f9fa;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  #tips li {
+    margin-bottom: 8px;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Health Feedback</h1>
+    <div id="bmiSummary"></div>
+    <ul id="tips"></ul>
+    <button onclick="goBack()">Back to Calculator</button>
+  </div>
+
+  <script>
+    // Get saved BMI data from the calculator page
+    let bmi = localStorage.getItem("bmiValue");
+    let category = localStorage.getItem("bmiCategory");
+
+    let summaryDiv = document.getElementById("bmiSummary");
+    let tipsList = document.getElementById("tips");
+
+    // If no data found, tell user to calculate first
+    if (!bmi || !category) {
+      summaryDiv.innerHTML = "No BMI data found.";
+      tipsList.innerHTML = "<li>Please go back and calculate your BMI first.</li>";
+    } else {
+      summaryDiv.innerHTML = "Your BMI: " + bmi + " (" + category + ")";
+
+      let tips = [];
+
+      // Basic, general feedback tips for each category
+      if (category === "Underweight") {
+        tips = [
+          "Include more calorie-dense, nutrient-rich foods like nuts, dairy, and whole grains.",
+          "Eat frequent, balanced meals throughout the day.",
+          "Consider strength training to build muscle mass.",
+          "Consult a doctor or dietitian if weight gain is difficult."
+        ];
+      } else if (category === "Normal weight") {
+        tips = [
+          "Great job! Keep maintaining a balanced diet.",
+          "Stay active with regular exercise (at least 150 mins/week).",
+          "Keep track of your weight periodically.",
+          "Prioritize sleep and hydration for overall health."
+        ];
+      } else if (category === "Overweight") {
+        tips = [
+          "Focus on a balanced diet with controlled portion sizes.",
+          "Increase physical activity, aiming for 30 mins a day.",
+          "Reduce intake of sugary drinks and processed foods.",
+          "Small, consistent changes work better than crash diets."
+        ];
+      } else {
+        tips = [
+          "Consider consulting a healthcare provider for personalized guidance.",
+          "Gradually build an exercise routine that fits your comfort level.",
+          "Focus on whole foods and reducing processed food intake.",
+          "Small, sustainable lifestyle changes are more effective long-term."
+        ];
+      }
+
+      // Add each tip as a list item
+      tips.forEach(function(tip) {
+        let li = document.createElement("li");
+        li.textContent = tip;
+        tipsList.appendChild(li);
+      });
+    }
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

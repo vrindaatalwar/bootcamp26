@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>College Registration Form</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body id="body" class="bg-gray-100 transition duration-500">
+
+<div class="max-w-3xl mx-auto mt-10 p-8 bg-white rounded-xl shadow-lg">
+
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-blue-600">
+            College Registration Form
+        </h1>
+
+        <button
+            onclick="toggleDarkMode()"
+            class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">
+            Dark Mode
+        </button>
+    </div>
+
+    <form id="registrationForm">
+
+        <!-- Name -->
+        <div class="mb-4">
+            <label class="block font-semibold">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                class="w-full border p-2 rounded">
+            <p id="nameError" class="text-red-500 text-sm"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+            <label class="block font-semibold">Email</label>
+            <input
+                type="email"
+                id="email"
+                class="w-full border p-2 rounded">
+            <p id="emailError" class="text-red-500 text-sm"></p>
+        </div>
+
+        <!-- Mobile -->
+        <div class="mb-4">
+            <label class="block font-semibold">Mobile Number</label>
+            <input
+                type="text"
+                id="mobile"
+                class="w-full border p-2 rounded">
+            <p id="mobileError" class="text-red-500 text-sm"></p>
+        </div>
+
+        <!-- DOB -->
+        <div class="mb-4">
+            <label class="block font-semibold">Date of Birth</label>
+            <input
+                type="date"
+                id="dob"
+                class="w-full border p-2 rounded">
+            <p id="dobError" class="text-red-500 text-sm"></p>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-4">
+            <label class="block font-semibold">Gender</label>
+
+            <input type="radio" name="gender" value="Male"> Male
+
+            <input type="radio" name="gender" value="Female" class="ml-4"> Female
+
+            <input type="radio" name="gender" value="Other" class="ml-4"> Other
+
+            <p id="genderError" class="text-red-500 text-sm"></p>
+        </div>
+
+        <!-- Department -->
+        <div class="mb-4">
+            <label class="block font-semibold">Department</label>
+
+            <select id="department" class="w-full border p-2 rounded">
+
+                <option value="">Select Department</option>
+
+                <option>Computer Engineering</option>
+
+                <option>Information Technology</option>
+
+                <option>Electronics</option>
+
+                <option>Mechanical</option>
+
+                <option>Civil</option>
+
+            </select>
+
+            <p id="departmentError" class="text-red-500 text-sm"></p>
+
+        </div>
+
+        <!-- Semester -->
+        <div class="mb-4">
+            <label class="block font-semibold">Semester</label>
+
+            <select id="semester" class="w-full border p-2 rounded">
+
+                <option value="">Select Semester</option>
+
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+
+            </select>
+
+            <p id="semesterError" class="text-red-500 text-sm"></p>
+
+        </div>
+
+        <!-- Password -->
+        <div class="mb-4">
+
+            <label class="block font-semibold">Password</label>
+
+            <div class="flex">
+
+                <input
+                    type="password"
+                    id="password"
+                    class="w-full border p-2 rounded">
+
+                <button
+                    type="button"
+                    onclick="togglePassword()"
+                    class="ml-2 bg-blue-500 text-white px-3 rounded">
+                    Show
+                </button>
+
+            </div>
+
+            <p id="passwordError" class="text-red-500 text-sm"></p>
+
+        </div>
+
+        <!-- Address -->
+        <div class="mb-4">
+
+            <label class="block font-semibold">Address</label>
+
+            <textarea
+                id="address"
+                class="w-full border p-2 rounded"></textarea>
+
+        </div>
+
+        <button
+            type="submit"
+            class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
+
+            Register
+
+        </button>
+
+    </form>
+
+    <p
+        id="successMessage"
+        class="text-green-600 font-bold text-center mt-5">
+    </p>
+
+</div>
+
+<script>
+
+const form=document.getElementById("registrationForm");
+
+form.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+document.querySelectorAll("p").forEach(p=>{
+if(p.id!="successMessage")
+p.innerHTML="";
+});
+
+let valid=true;
+
+let name=document.getElementById("name").value.trim();
+
+let email=document.getElementById("email").value.trim();
+
+let mobile=document.getElementById("mobile").value.trim();
+
+let dob=document.getElementById("dob").value;
+
+let department=document.getElementById("department").value;
+
+let semester=document.getElementById("semester").value;
+
+let password=document.getElementById("password").value;
+
+let address=document.getElementById("address").value;
+
+let gender=document.querySelector('input[name="gender"]:checked');
+
+if(name==""){
+document.getElementById("nameError").innerHTML="Enter your name";
+valid=false;
+}
+
+let emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(!email.match(emailPattern)){
+document.getElementById("emailError").innerHTML="Enter valid email";
+valid=false;
+}
+
+let mobilePattern=/^[0-9]{10}$/;
+
+if(!mobile.match(mobilePattern)){
+document.getElementById("mobileError").innerHTML="Enter valid mobile number";
+valid=false;
+}
+
+if(dob==""){
+document.getElementById("dobError").innerHTML="Select DOB";
+valid=false;
+}
+
+if(gender==null){
+document.getElementById("genderError").innerHTML="Select gender";
+valid=false;
+}
+
+if(department==""){
+document.getElementById("departmentError").innerHTML="Select department";
+valid=false;
+}
+
+if(semester==""){
+document.getElementById("semesterError").innerHTML="Select semester";
+valid=false;
+}
+
+if(password.length<6){
+document.getElementById("passwordError").innerHTML="Password must be at least 6 characters";
+valid=false;
+}
+
+if(valid){
+
+let student={
+
+name,
+
+email,
+
+mobile,
+
+dob,
+
+gender:gender.value,
+
+department,
+
+semester,
+
+password,
+
+address
+
+};
+
+localStorage.setItem("studentData",JSON.stringify(student));
+
+document.getElementById("successMessage").innerHTML="Registration Successful!";
+
+form.reset();
+
+}
+
+});
+
+function togglePassword(){
+
+let password=document.getElementById("password");
+
+if(password.type=="password"){
+
+password.type="text";
+
+}
+else{
+
+password.type="password";
+
+}
+
+}
+
+function toggleDarkMode(){
+
+document.getElementById("body").classList.toggle("bg-gray-900");
+
+document.getElementById("body").classList.toggle("bg-gray-100");
+
+document.querySelector("div").classList.toggle("bg-gray-800");
+
+document.querySelector("div").classList.toggle("text-white");
+
+}
+
+</script>
+
+</body>
+</html>
