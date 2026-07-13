@@ -1,0 +1,197 @@
+
+
+body{
+     margin:0;
+     background:black;
+     font-family:Arial, Helvetica, sans-serif;
+
+     
+}
+
+.container{
+    
+    display:flex;
+     /* gap:40px; */
+    /* text-align: center; */
+    justify-content:space-between;
+    height:100vh;
+    
+
+}
+.btn{
+    width:400px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items: center;
+
+    margin-top:30px;
+}
+.btn button{
+    padding: 15px 10px ;
+    border:none;
+    width:65%;
+    /* width: 300px; */
+    border-radius:12px;
+    background:#2d2d2d;
+    color:white;
+    transition:.3s;
+}
+
+.btn button:hover{
+    background:white;
+    color:black;
+}
+
+.left{
+    width:50%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:linear-gradient(
+        180deg,
+        #d7a9ff 0%,
+        #8d35ff 35%,
+        #25103d 70%,
+        #111111 100%
+    );
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+     /* border-radius:40px 0 0 0; */
+}
+
+.right{
+    background:#080808;
+    width:50%;
+    color: white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+
+}
+.glbtn{
+   display:flex;
+    gap:20px;
+}
+.glbtn button{
+ 
+    width: 120px;
+    background-color: rgb(143, 135, 135);
+    padding:10px 5px ;
+    margin:7px;
+    margin-bottom: 15px;
+
+    border:none;
+    border-radius:12px;
+    color:white;
+    transition:.3s;
+
+    
+
+}
+.glbtn button:hover{
+    background-color: rgb(109, 104, 104)
+}
+
+
+.form h2{
+    color:  white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.row{
+    display:flex;
+    gap:20px;
+    width:100%;
+}
+
+.field{
+    flex:1;
+}
+
+.field label{
+    display:block;
+    text-align:left;
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+.field input{
+    width:100%;
+}
+input{
+    width:100%;
+    padding:14px;
+    margin-top:0px;
+    margin-bottom:5px;
+
+    background:#1b1b1b;
+    color:white;
+
+    border:1px solid #333;
+    border-radius:10px;
+
+    box-sizing:border-box;
+}
+label{
+    /* justify-content:flex-start;
+    margin-top:10px; */
+
+    display:block;
+    text-align:left;
+    margin-bottom:8px;
+}
+
+
+.bottom button{
+
+    padding:17px 35px ;
+    border:none;
+    border-radius:12px;
+    background:#2d2d2d;
+    color:white;
+    transition:.3s;
+}
+
+.bottom button:hover{
+    background:white;
+    color:black;
+}
+
+.login{
+    color:white;
+    text-align:center;
+}
+.login a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+
+.login{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+}
+
+.login a{
+    color:blue;
+    text-decoration:none;
+}
+.bottom label{
+
+    margin-top: 20px;
+}
