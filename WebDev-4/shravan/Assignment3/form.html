@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration Form</title>
+
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    
+    <div class="heading">
+        <img src="https://styles.redditmedia.com/t5_cfnsem/styles/bannerBackgroundImage_yihiyzncbdod1.png?frame=1&auto=webp&s=6d138c5988a82ecef65bf8f77ae4276b59cd234a" alt="" class="logo">
+        <h1>College Registration Form 😪</h1>
+         <button type="button" id="resetBtn" style="margin: 6%; border-radius: 15px; background-color: rgb(44, 44, 216); color: white;"><h2>Reset</h2></button>
+            <button id="darkModeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbo8umOECMrgToWnIONGemwSODBmXs01f2RixNFmJziMy4sQo7lZ7oIw1p&s=10" alt="College Banner">
+        <img src="image.png" alt="">
+    </div>
+    <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;"><h3>Name:</h3></div>
+    <input type="text" placeholder="Enter your name as per aadhar" id="name" >
+    <button  id="nameBtn"><h3>Enter</h3></button> <span id="nameError"></span>
+    </div>
+     <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;"><h3>Email:</h3></div>
+    <input type="email" placeholder="abc@gmail.com" id="email" >
+    <button id="emailBtn"><h3>Enter</h3></button><span id="emailMsg"></span>
+    </div>
+     <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;"><h3>Mobile number:</h3></div>
+    <input type="text" placeholder="Enter 10-digit number" id="mobile" maxlength="10">
+    <button id="mobileBtn"><h3>Enter</h3></button><span id="mobileMsg"></span>
+    </div>
+     <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;"><h3>Date of birth:</h3></div>
+    <input type="date" placeholder="DD-MM-YYYY" id="dob" >
+    <button id="dobBtn"><h3>Enter</h3></button><span id="dobMsg"></span>
+    </div>
+   <div class="universal">
+    <div style="margin-left:25px; margin-top:10px;">
+        <h3>Gender:</h3>
+    </div>
+  <input type="Gender" placeholder="only-male/female" id="gender" >
+
+    <button id="genderBtn"><h3>Enter</h3></button><span id="genderMsg"></span>
+</div>
+     <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;" ><h3>Department:</h3></div>
+    <input type="text" placeholder="like AI-DS" id="department" >
+    <button id="departmentBtn"><h3>Enter</h3></button><span id="departmentMsg"></span>
+    </div>
+     <div class="universal"><div style="margin-left: 25px;  margin-top: 10px;"><h3>Extra about you:</h3></div>
+    <input type="text" id="note">
+    <button id="noteBtn"><h3>Enter</h3></button><span id="noteMsg"></span>
+    </div>
+    <div class="final" id="submit"><h3>Submit</h3></div>
+<script>
+        let nameValid = false;
+        let emailValid = false;
+        let mobileValid = false;
+        let dobValid = false;
+        let genderValid = false;
+        let departmentValid = false;
+        let noteValid=false;
+                    
+          function savedata(){
+              let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let dob = document.getElementById("dob").value;
+            let department = document.getElementById("department").value;
+            let note=document.getElementById("note").value;
+   
+       let student = {
+        name:name,
+        email: email,
+        mobile: mobile,
+        dob: dob,
+        department: department,
+        note: note
+};
+localStorage.setItem("student",JSON.stringify(student));
+          }
+let savedStudent = JSON.parse(localStorage.getItem("student"));
+
+if(savedStudent){
+
+    document.getElementById("name").value = savedStudent.name || "";
+    document.getElementById("email").value = savedStudent.email || "";
+    document.getElementById("mobile").value = savedStudent.mobile || "";
+    document.getElementById("dob").value = savedStudent.dob || "";
+    document.getElementById("gender").value = savedStudent.gender || "";
+    document.getElementById("department").value = savedStudent.department || "";
+    document.getElementById("note").value = savedStudent.note || "";
+
+}
+
+
+    document.getElementById("nameBtn").addEventListener("click", function () {
+    let name = document.getElementById("name").value.trim();
+    let errormsg=document.getElementById("nameError");
+    
+
+    if (name === "") {
+        errormsg.textContent = "Name is required.";
+        errormsg.style.color="red";
+    } else if(name.length>10 ) {
+        errormsg.textContent = "✔ Valid Name";
+        errormsg.style.color="green";
+        nameValid=true;
+        savedata();
+    }else{
+        errormsg.textContent="Enter Full name";
+        errormsg.style.color="red";
+    }
+});
+document.getElementById("emailBtn").addEventListener("click",function(){
+    let email=document.getElementById("email").value;
+    let emailMsg=document.getElementById("emailMsg");
+    let emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(emailPattern.test(email)){
+            emailMsg.textContent = "✔ Correct Email";
+        emailMsg.style.color = "green";
+        savedata();
+        emailValid=true;
+    }
+    else{
+         emailMsg.textContent = "❌ Invalid Email";
+        emailMsg.style.color = "red";
+    }
+})
+document.getElementById("mobileBtn").addEventListener("click",function(){
+    let mobile=document.getElementById("mobile").value;
+    let mobileMsg=document.getElementById("mobileMsg");
+    if(mobile.length<10){
+        mobileMsg.textContent="❌ Invalid number.";
+        mobileMsg.style.color="red";
+    } 
+    if(mobile.length==10){
+          mobileMsg.textContent="✔ Correct number.";
+        mobileMsg.style.color="green";
+        mobileValid=true;
+        savedata(); 
+    }       
+})
+document.getElementById("genderBtn").addEventListener("click",function(){
+     let genderMsg=document.getElementById("genderMsg");
+let gender=document.getElementById("gender").value;
+if(gender=="male"|| gender=="female"){
+    genderMsg.textContent="✔ Valid gender";
+    genderMsg.style.color="green";
+    genderValid=true;
+    savedata();
+}
+else{
+     genderMsg.textContent="❌ InValid gender";
+    genderMsg.style.color="red";
+}
+    
+})
+
+
+document.getElementById("dobBtn").addEventListener("click", function () {
+
+    let dob = document.getElementById("dob").value;
+    let dobMsg = document.getElementById("dobMsg");
+
+    let today = new Date();
+    let birthDate = new Date(dob);
+
+    if (dob === "") {
+        dobMsg.textContent = "❌ Enter DoB.";
+        dobMsg.style.color = "red";
+        dobValid = false;
+    }
+    else if (birthDate > today) {
+        dobMsg.textContent = "❌ not in future";
+        dobMsg.style.color = "red";
+        dobValid = false;
+    }
+    else {
+        dobMsg.textContent = "✔ Valid DoB";
+        dobMsg.style.color = "green";
+        dobValid = true;
+        savedata();
+    }
+
+});
+
+let departmentBtn = document.getElementById("departmentBtn");
+
+departmentBtn.addEventListener("click", function () {
+
+    let department = document.getElementById("department").value.toLowerCase().trim();
+    let departmentMsg = document.getElementById("departmentMsg");
+
+    if (
+        department === "ai-ds" ||
+        department === "cs-ds" ||
+        department === "extc" ||
+        department === "mech" ||
+        department === "iot" ||
+        department === "cs" ||
+        department === "it"
+    ) {
+        departmentMsg.textContent = "✔ Valid Depart";
+        departmentMsg.style.color = "green";
+        departmentValid=true;
+        savedata();
+    }
+    else {
+        departmentMsg.textContent = "❌ Invalid Depart";
+        departmentMsg.style.color = "red";
+    }
+
+});
+document.getElementById("noteBtn").addEventListener("click",function(){
+    let note=document.getElementById("note").value.trim();
+    let noteMsg=document.getElementById("noteMsg");
+    if(note.length<50){
+        note.noteMsg.textContent="min 50 words";
+        noteMsg.style.color="red";
+    }
+    else{
+        note.noteMsg.textContent="Thanks";
+        noteMsg.style.color="green";
+        noteValid=true;
+        savedata();
+    }
+})
+   
+   document.getElementById("submit").addEventListener("click",function(){
+     if(
+        nameValid &&
+        emailValid &&
+        mobileValid &&
+        dobValid &&
+        genderValid &&
+        departmentValid
+    ){
+         
+        alert("🎉 Registration Successful!");
+    }
+    else{
+        alert("❌ Please complete all fields correctly.");
+    }
+   })
+   document.getElementById("resetBtn").addEventListener("click", function () {
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("mobile").value = "";
+    document.getElementById("dob").value = "";
+    document.getElementById("department").value = "";
+    document.getElementsByName("gender").vlaue="";
+    document.getElementsByName("note").value="";
+
+    
+
+   
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailMsg").textContent = "";
+    document.getElementById("mobileMsg").textContent = "";
+    document.getElementById("dobMsg").textContent = "";
+    document.getElementById("departmentMsg").textContent = "";
+    document.getElementById("genderMsg").textContent = "";
+    document.getElementById("noteMsg").textContent = "";
+    
+
+    // Reset validation flags
+    nameValid = false;
+    emailValid = false;
+    mobileValid = false;
+    dobValid = false;
+    departmentValid = false;
+    genderValid = false;
+    noteValid=false;
+
+});
+let darkBtn = document.getElementById("darkModeBtn");
+
+darkBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        darkBtn.textContent = "☀ Light Mode";
+
+        localStorage.setItem("theme","dark");
+    }
+    else{
+
+        darkBtn.textContent = "🌙 Dark Mode";
+
+        localStorage.setItem("theme","light");
+    }
+
+});
+let theme = localStorage.getItem("theme");
+
+if(theme=="dark"){
+
+    document.body.classList.add("dark");
+    darkBtn.textContent = "☀ Light Mode";
+
+}
+
+</script>
+</body>
+</html>
