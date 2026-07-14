@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyo Dessert Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /*slow float */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-pink-600 hover:text-pink-500 hover:drop-shadow-lg transition duration-300">
+                Miyo Dessert Bar
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold">
+                <li><a href="#about" class="hover:text-pink-500 transition duration-300">About</a></li>
+                <li><a href="#menu" class="hover:text-pink-500 transition duration-300">Menu</a></li>
+                <li><a href="#gallery" class="hover:text-pink-500 transition duration-300">Gallery</a></li>
+                <li><a href="#contact" class="hover:text-pink-500 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
+        <div class="md:w-1/2">
+            <h1 class="text-5xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
+                Sweeten your day. Find us at <span class="text-pink-600">Bandra West.</span>
+            </h1>
+            <p class="text-lg mb-8 text-gray-600">
+                Experience the finest sorbets, and use multiple add-on toppings to craft the perfect dessert that suits your taste.
+            </p>
+            <a href="#menu" class="inline-block bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-pink-500 hover:-translate-y-1 hover:shadow-xl transition transform ease-in-out duration-300">
+                Order Now
+            </a>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <img src="https://img.magicpin.com/9660777_store_images_5.jpg" alt="Delicious Desserts" class="w-full max-w-md rounded-full shadow-2xl animate-float border-8 border-white aspect-square object-cover">
+        </div>
+    </header>
+
+    <section id="about" class="bg-white py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <img src="images/Screenshot 2026-07-14 at 10.44.54 PM.png" alt="Inside Miyo" class="w-full max-w-[430px] mx-auto h-100 object-cover rounded-2xl shadow-md">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-5xl font-bold mb-6 text-gray-900">Our Story</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Miyo was born from a simple idea: to build a dessert space where you can create something that’s truly your own, and feel truly at home. A place filled with good energy and happiness, where everyday moments feel a little more joyful, and you leave lighter than you came in.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    The intention was to give people the freedom to create, to mix, match, swirl, and create something that’s entirely theirs. With delicious desserts, consistently high quality, and a wide variety of options , Miyo is about everyday joy, shared moments, and little bursts of happiness.<br><br>
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Starting with our first location, we’re building spaces where everyone feels at home, where quality and hospitality go hand in hand, and where good vibes aren’t just an afterthought, they’re the main ingredient.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="bg-pink-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 text-gray-900">The latest sorbets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition transform duration-300">
+                    <img src="images/Screenshot 2026-07-14 at 10.46.40 PM.png" alt="Passionfruit" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Passionfruit</h3>
+                        <p class="text-gray-600 mb-4">Bright, tangy, and instantly refreshing.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition transform duration-300">
+                    <img src="images/Screenshot 2026-07-14 at 10.46.44 PM.png" alt="Lemon" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Lemon</h3>
+                        <p class="text-gray-600 mb-4">Zesty, citrus, and palate-cleansing.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition transform duration-300">
+                    <img src="images/Screenshot 2026-07-14 at 10.46.49 PM.png" alt="Watermelon" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Watermelon</h3>
+                        <p class="text-gray-600 mb-4">Light, juicy, and effortlessly cooling.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 text-gray-900">Miyo Moments</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-xl">
+                    <img src="images/Screenshot 2026-07-14 at 11.11.21 PM.png" alt="Gallery" class="w-full h-48 object-cover hover:scale-110 transition transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl">
+                    <img src="images/Screenshot 2026-07-14 at 11.11.36 PM.png" alt="Gallery" class="w-full h-48 object-cover hover:scale-110 transition transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl">
+                    <img src="images/Screenshot 2026-07-14 at 11.11.48 PM.png" alt="Gallery" class="w-full h-48 object-cover hover:scale-110 transition transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl">
+                    <img src="images/Screenshot 2026-07-14 at 11.12.49 PM.png" alt="Gallery" class="w-full h-48 object-cover hover:scale-110 transition transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-pink-50 py-16">
+        <div class="container mx-auto px-6 max-w-lg">
+            <h2 class="text-5xl font-bold text-center mb-8 text-gray-900">Say Hello</h2>
+            
+            <form class="bg-white p-8 rounded-2xl shadow-md space-y-6">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" required placeholder="you@example.com" class="peer w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 invalid:[&:not(:placeholder-shown)]:border-red-500 valid:[&:not(:placeholder-shown)]:border-green-500">
+                    <p class="mt-1 hidden peer-invalid:[&:not(:placeholder-shown)]:block text-red-500 text-sm">
+                        Please enter a valid email address.
+                    </p>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                    <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit number" class="peer w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 invalid:[&:not(:placeholder-shown)]:border-red-500 valid:[&:not(:placeholder-shown)]:border-green-500">
+                    <p class="mt-1 hidden peer-invalid:[&:not(:placeholder-shown)]:block text-red-500 text-sm">
+                        Please enter exactly 10 digits.
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full bg-pink-600 text-white font-bold py-3 rounded-lg hover:bg-pink-500 transition duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p class="text-lg font-bold mb-2">Miyo Dessert Bar</p>
+        <p class="text-gray-400">Shop 3, Silvercroft, Junction of 16th and, 33rd Rd, Bandra West, Mumbai, Maharashtra 400050</p>
+        <p class="text-pink-400 mt-4">&copy; 2026 Miyo. All sweetest rights reserved.</p>
+    </footer>
+
+</body>
+</html>
