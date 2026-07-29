@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const sequenceStream = {
+    [Symbol.iterator]() {
+        let internalStep = 0;
+        return {
+            next() {
+                internalStep++;
+                if (internalStep === 1) return { value: internalStep, done: false };
+                if (internalStep === 2) return { value: Promise.resolve(internalStep), done: false };
+                return { done: true };
+            }
+        };
+    }
+};
+
+(async () => {
+    for (const sequenceValue of sequenceStream) {
+        console.log(sequenceValue);
+    }
+})();
+
+</script>
+</html>
